@@ -1,0 +1,36 @@
+@use '_variable.scss';
+
+
+.body {
+  display: flex;
+  flex-direction: column
+}
+
+
+.header {
+  height: 100px;
+  width: 400px;
+  background-color: variable.$navy;
+}
+
+.box {
+  display: flex;
+}
+
+.sidebar {
+  height: 250px;
+  width: 150px;
+  background-color: variable.$green;
+}
+
+.main {
+  height: 250px;
+  width: 250px;
+  background-color: variable.$red;
+}
+
+.footer {
+  height: 100px;
+  width: 400px;
+  background-color: variable.$brown;
+}
