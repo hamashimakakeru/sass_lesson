@@ -62,22 +62,20 @@
     margin-top: 40px;
 
     &__list {
+      padding: 5px;
+      margin-bottom: 10px;
+      background-color: #fff;
 
-      &__line {
-        padding: 5px;
-        margin-bottom: 10px;
-        background-color: #fff;
+      @each $color in variable.$classNames {
+        $index_key: index(variable.$classNames, $color);
 
-        @each $color in variable.$classNames {
-          $index_key: index(variable.$classNames, $color);
-  
-          &__#{$color} {
-            @include mixin.main_box(nth(variable.$buttonColor, $index_key));
-          }
+        &__#{$color} {
+          @include mixin.main_box(nth(variable.$buttonColor, $index_key));
         }
       }
     }
   }
+
   &__end {
     margin-bottom: 0px;
   }
