@@ -1,4 +1,4 @@
-@use 'style';
+@use 'variable';
 
 @mixin header_box($color) {
   display: block;
@@ -8,72 +8,10 @@
   margin-right: 10px;
 }
 
-.header {
-  &__box {
-    display: flex;
-    margin-top:20px;
-    margin-right: 20px;
-
-    justify-content: flex-end;
-
-
-    &__list {
-      display: flex;
-      padding: 10px;
-      background-color: #fff;
-
-
-      &__purple {
-        @include header_box( red);
-      }
-      &__orange {
-        @include header_box( orange);
-      }
-      &__blue {
-        @include header_box( blue);
-        margin-right: 0;
-      }
-    }
-  }
-}
 
 @mixin main_box($color) {
   display: block;
   height: 40px;
   width: 140px;
   background-color: $color;
-}
-
-.main {
-  &__box {
-    display: flex;
-    margin-left: 40px;
-    margin-top: 40px;
-
-    &__list {
-      display: flex;
-      flex-direction: column;
-      
-
-      &__line {
-        padding: 5px;
-        margin-bottom: 10px;
-        background-color: #fff;
-
-        &__purple {
-          @include main_box( red);
-        }
-        &__orange {
-          @include main_box( orange);
-        }
-        &__blue {
-          @include main_box( blue);
-
-        }
-      }
-    }
-  }
-  &__end {
-    margin-bottom: 0px;
-  }
 }
