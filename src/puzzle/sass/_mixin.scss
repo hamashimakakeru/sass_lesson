@@ -1,0 +1,17 @@
+@use 'variable';
+
+@mixin header_box($color) {
+  display: block;
+  background-color: $color;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+
+@mixin main_box($color) {
+  display: block;
+  height: 40px;
+  width: 140px;
+  background-color: $color;
+}

@@ -1,0 +1,88 @@
+@use 'variable';
+@use 'mixin';
+
+.body {
+  display: flex;
+  flex-direction: column
+}
+
+
+.header {
+  height: 100px;
+  width: 400px;
+  background-color: variable.$navy;
+
+  &__box {
+    display: flex;
+    margin-top:20px;
+    margin-right: 20px;
+
+    justify-content: flex-end;
+
+
+    &__list {
+      display: flex;
+      padding: 10px;
+      background-color: #fff;
+
+      @each $color in variable.$classNames {
+        $index_key: index(variable.$classNames, $color);
+
+        &__#{$color} {
+          @include mixin.header_box(nth(variable.$buttonColor, $index_key));
+        }
+      }
+    }
+  }
+
+  &__end {
+    margin-right: 0;
+  }
+}
+
+.box {
+  display: flex;
+}
+
+.sidebar {
+  height: 250px;
+  width: 150px;
+  background-color: variable.$green;
+}
+
+.main {
+  height: 250px;
+  width: 250px;
+  background-color: variable.$red;
+
+  
+  &__box {
+    display: flex;
+    margin-left: 40px;
+    margin-top: 40px;
+
+    &__list {
+      padding: 5px;
+      margin-bottom: 10px;
+      background-color: #fff;
+
+      @each $color in variable.$classNames {
+        $index_key: index(variable.$classNames, $color);
+
+        &__#{$color} {
+          @include mixin.main_box(nth(variable.$buttonColor, $index_key));
+        }
+      }
+    }
+  }
+
+  &__end {
+    margin-bottom: 0px;
+  }
+}
+
+.footer {
+  height: 100px;
+  width: 400px;
+  background-color: variable.$brown;
+}
